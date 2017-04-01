@@ -24,10 +24,9 @@ Route::get('/scoreresult/{word?}', 'WordController@view');
 Route::get('/', 'WelcomeController@index');
 
 
-//if config('app.env') == ('local') {
-
-		Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
-//	}
+if(config('app.env') == 'local') {
+    Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
+}
 
 // if(config('app.env') == 'local') {
 // 	Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
