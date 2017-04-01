@@ -36,4 +36,8 @@ public function view($word = null) {
 	return 'You want to calculate the word '.$word;
 }
 
+public function show($word = null) {
+	return view('scrabble.calculate');
+}
+
 }
