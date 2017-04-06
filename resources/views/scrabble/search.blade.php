@@ -1,13 +1,13 @@
-{{-- /resources/views/scrabble/calculate.blade.php --}}
+{{-- /resources/views/scrabble/search.blade.php --}}
 @extends('layouts.master')
 
 @section('content')
 
 <h1>Scrabble Word Score Calculator</h1>
-    <form method='GET' action='/calculate'>
+    <form method='GET' action='/search'>
         <label for="word">Your Word:</label>
         <input type="text" name="word" id="word">
-        <p class="required">*Don't forget! A valid scrabble word is 2 or more letters!*</p> 
+        <p class="required">*Don't forget! You can only use letters!*</p> 
 
             @if($errors->get('word'))
                 <ul class="error">
@@ -31,7 +31,7 @@
             @endif
         <div class="checkbox">
         <input type='checkbox' name='bingo'>
-        <label>Did you use all 7 tiles? You get bingo!</label>
+        <label>Include 50 point "bingo"? (word that uses all 7 tiles)</label>
                 </div>
         <input class="button" type="submit" name="button">
     </form>
